@@ -87,7 +87,7 @@
 
             var longUrl = document.getElementById("long-url").value;
 
-            fetch("/shorten", {
+            fetch("http://localhost:3000/shorten", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -99,7 +99,7 @@
             .then(response => response.json())
             .then(data => {
                 document.getElementById("shortened-url").style.display = "block";
-                document.getElementById("short-url").innerText = data.shortUrl;
+                document.getElementById("short-url").innerText = data.shortURL;
             })
             .catch(error => console.error("Error:", error));
         });
